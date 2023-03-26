@@ -2,3 +2,7 @@ body{
     font-family: 'Barlow Condensed', sans-serif;
     padding: 20px 80px;
 }
+a{
+    text-decoration: none;
+    color: #000;
+}
