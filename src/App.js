@@ -59,8 +59,8 @@ class  App extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setCurrentUser: (user) => dispatch(setCurrentUser(user)) 
-  };
+    setCurrentUser: (user) => dispatch(setCurrentUser(user)) //user his payload                                                          //
+  };                                                        // setCurrentUser his a fuction that create action 
 };
 
 const mapStatetoProps=({user})=>({
