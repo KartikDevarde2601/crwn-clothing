@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'; 
 // This is the function that allows us to combine multiple reducers into one root reducer
-import cardReducer from './card/card.reducer';
+import cardReducer from './cart/cart.reducer';
 import userReducer from './user/user.reducer';
 
 export default combineReducers({ 
