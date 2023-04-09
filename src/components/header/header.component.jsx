@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
-import CardDropdown from '../card-dropdown/card-dropdown.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
-import CardIcon from '../card-icon/card-icon.component';
+import CardIcon from '../cart-icon/cart-icon.component';
 
 import './header.styles.scss';
 
@@ -32,13 +32,13 @@ const Header = ({ currentUser,hidden }) => (
       <CardIcon/>
     </div>
     {
-      hidden ? null : <CardDropdown/> // if hidden is true then return null else render CardDropdown
+      hidden ? null : <CartDropdown/> // if hidden is true then return null else render CardDropdown
     }
 
   </div>
 );
 
-const mapStateToProps = ({user:{currentUser},card:{hidden}}) => ({ 
+const mapStateToProps = ({user:{currentUser},cart:{hidden}}) => ({ 
   currentUser,
   hidden
 });
