@@ -7,14 +7,18 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import store from './redux/store'; 
+import exportObject from './redux/store';
+
+import { PersistGate } from 'redux-persist/integration/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={exportObject.store}>
     <BrowserRouter>
+    <PersistGate persistor={exportObject.persistor}>
     <App />
+    </PersistGate>
     </BrowserRouter>
     </Provider>
   </React.StrictMode>
