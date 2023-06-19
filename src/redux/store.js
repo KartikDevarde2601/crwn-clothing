@@ -10,10 +10,7 @@ const store = createStore(rootReducer, applyMiddleware(...middlewares));
  
 const persistor = persistStore(store);
 
-const exportObject = { 
-    store,
-   persistor 
-};
+const exportObject = {store,persistor};
 
 
 export default exportObject;

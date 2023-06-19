@@ -2,6 +2,8 @@ import { combineReducers } from 'redux';
 // This is the function that allows us to combine multiple reducers into one root reducer
 import cardReducer from './cart/cart.reducer';
 import userReducer from './user/user.reducer';
+import directoryReducer from './directory/directory.reducer';
+import shopReducer from './shop/shop.reducer';
 
 import persistReducer from 'redux-persist/es/persistReducer';// This is the actual persist reducer that we need from redux persist
 import storage from 'redux-persist/lib/storage';// This is the actual local storage object on our window browser
@@ -14,7 +16,9 @@ const persistConfig ={// This is the actual configuration that we want redux per
 
 const rootReducer = combineReducers({
   user: userReducer,
-  cart:cardReducer  
+  cart: cardReducer,
+  directory: directoryReducer,
+  shop:shopReducer 
 });
   // This is the key value pair that we are passing in. The key is the actual property that we are going to use to represent the value of this reducer. The value is the actual reducer that we are passing in.
 
