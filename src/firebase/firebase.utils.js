@@ -1,7 +1,7 @@
-
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
+
 
 const config = {
   apiKey: "AIzaSyCxcjoRrPzd8jWedNojIhtDRpkqEF8zqe8",
@@ -48,4 +48,3 @@ provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
-

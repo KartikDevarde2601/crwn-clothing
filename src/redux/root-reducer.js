@@ -1,26 +1,23 @@
-import { combineReducers } from 'redux'; 
-// This is the function that allows us to combine multiple reducers into one root reducer
-import cardReducer from './cart/cart.reducer';
+import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
 import userReducer from './user/user.reducer';
+import cartReducer from './cart/cart.reducer';
 import directoryReducer from './directory/directory.reducer';
 import shopReducer from './shop/shop.reducer';
 
-import persistReducer from 'redux-persist/es/persistReducer';// This is the actual persist reducer that we need from redux persist
-import storage from 'redux-persist/lib/storage';// This is the actual local storage object on our window browser
-
-const persistConfig ={// This is the actual configuration that we want redux persist to use
-  key:'root',
+const persistConfig = {
+  key: 'root',
   storage,
-  whitelist:['cart']
-}
+  whitelist: ['cart']
+};
 
 const rootReducer = combineReducers({
   user: userReducer,
-  cart: cardReducer,
+  cart: cartReducer,
   directory: directoryReducer,
-  shop:shopReducer 
+  shop: shopReducer
 });
-  // This is the key value pair that we are passing in. The key is the actual property that we are going to use to represent the value of this reducer. The value is the actual reducer that we are passing in.
 
-  export default persistReducer(persistConfig,rootReducer);
-  // We are exporting the root reducer. We are going to pass in the persist config and the root reducer.
+export default persistReducer(persistConfig, rootReducer);
