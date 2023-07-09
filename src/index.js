@@ -17,5 +17,5 @@ ReactDOM.render(
       </PersistGate>
     </BrowserRouter>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root') 
 );
