@@ -1,37 +1,39 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
-import { googleSignInStart,emailSignInStart } from "../../redux/user/user.actions";
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
 
+import {
+  googleSignInStart,
+  emailSignInStart
+} from '../../redux/user/user.actions';
 
 import {
   SignInContainer,
   SignInTitle,
-  ButtonsBarContainer,
-} from "./sign-in.styles";
+  ButtonsBarContainer
+} from './sign-in.styles';
 
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: ''
     };
   }
 
-  handleSubmit = async (event) => {
+  handleSubmit = async event => {
     event.preventDefault();
-    const {emailSignInStart} = this.props
+    const { emailSignInStart } = this.props;
     const { email, password } = this.state;
 
-    emailSignInStart(email,password);
-
+    emailSignInStart(email, password);
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { value, name } = event.target;
 
     this.setState({ [name]: value });
@@ -77,9 +79,13 @@ class SignIn extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
-  emailSignInStart:( email,password) => dispatch(emailSignInStart({ email,password}))
-})
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password }))
+});
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignIn);

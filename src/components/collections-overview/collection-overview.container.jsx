@@ -17,3 +17,4 @@ WithSpinner
 )(CollectionsOverview);
 
 export default CollectionsOverviewContainer;
+
