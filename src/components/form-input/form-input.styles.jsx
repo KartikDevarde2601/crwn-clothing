@@ -38,6 +38,10 @@ export const FormInputContainer = styled.input`
   &:focus ~ label {
     ${shrinkLabelStyles}
   }
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
 `;
 
 export const FormInputLabel = styled.label`
@@ -52,5 +56,9 @@ export const FormInputLabel = styled.label`
 
   &.shrink {
     ${shrinkLabelStyles}
+  }
+
+  @media (max-width: 800px) {
+    font-size: 14px;
   }
 `;

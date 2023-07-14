@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import CollectionItem from "../../components/collection-item/collection-item.component";
 import { selectCollection } from "../../redux/shop/shop.selectors";
 
+// import { useSelector } from "react-redux";
+// import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+
 import {
   CollectionPageContainer,
   CollectionTitle,
@@ -10,6 +13,10 @@ import {
 } from "./collection.styles";
 
 const CollectionPage = ({ collection }) => {
+
+// const collectionId = useParasms();
+// const collection = useSelector(selectCollection(collectionId))
+
   const { title, items } = collection;
   return (
     <CollectionPageContainer>
